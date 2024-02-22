@@ -1,17 +1,21 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./hero.module.css";
-import ImgThunder from "../../../media/thunder.png?jsx";
+import ImgThunder from "../../../media/mathground.png?jsx";
+import { useNavigate } from "@builder.io/qwik-city";
 
 export default component$(() => {
+  const nav = useNavigate();
   return (
     <div class={["container", styles.hero]}>
       <ImgThunder class={styles["hero-image"]} alt="Image thunder" />
       <h1>
-        So <span class="highlight">fantastic</span>
+        将你从
+        <span class="highlight">复杂的</span>
         <br />
-        to have <span class="highlight">you</span> here
+        <span class="highlight">数学公式</span>
+        解放出来
       </h1>
-      <p>Have fun building your App with Qwik.</p>
+      <p>使用MathOCR轻松识别PDF/网页中的数学公式</p>
       <div class={styles["button-group"]}>
         <button
           onClick$={async () => {
@@ -65,16 +69,19 @@ export default component$(() => {
             setTimeout(shoot, 200);
             setTimeout(shoot, 300);
             setTimeout(shoot, 400);
+            setTimeout(() => {
+              nav("/app");
+            }, 300);
           }}
         >
-          Time to celebrate
+          使用网页端
         </button>
         <a
           href="https://qwik.builder.io/docs"
           target="_blank"
           class="button button-dark"
         >
-          Explore the docs
+          浏览文档
         </a>
       </div>
     </div>

@@ -7,6 +7,7 @@
 .logo {
   display: inline-block;
 }
+
 .logo a {
   display: block;
 }
@@ -41,4 +42,18 @@
   .header li {
     display: inline-block;
   }
+}
+
+.pilogo-image {
+  width: 200px;
+  height: 50px;
+}
+
+.tilte {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.tilte.h1 {
+  display: block;
 }

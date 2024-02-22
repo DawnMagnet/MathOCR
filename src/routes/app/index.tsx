@@ -5,12 +5,15 @@ import {
   useStore,
   useStylesScoped$,
 } from "@builder.io/qwik";
-import { type DocumentHead, useLocation } from "@builder.io/qwik-city";
-import styles from "./flower.css?inline";
-
+import { type DocumentHead } from "@builder.io/qwik-city";
+import styles from "./app.css?inline";
+import FileUploader from "~/components/file-upload/file-uploader";
 export default component$(() => {
   useStylesScoped$(styles);
-  const loc = useLocation();
+  // let reader = new FileReader();
+  // reader.onload = (event) => {
+  //   console.log(event.target.result);
+  // };
 
   const state = useStore({
     count: 0,
@@ -25,13 +28,15 @@ export default component$(() => {
     cleanup(() => clearInterval(internal));
   });
 
+  // const dropzone = new Dropzone("div#myId", { url: "/file/post" });
+
   return (
     <div class="container container-center">
       <div role="presentation" class="ellipsis"></div>
-      <h1>
+      <FileUploader />
+      {/* <h1>
         <span class="highlight">Generate</span> Flowers
       </h1>
-
       <input
         class="input"
         type="range"
@@ -60,11 +65,11 @@ export default component$(() => {
             style={{ "--index": `${i + 1}` }}
           />
         )).reverse()}
-      </div>
+      </div> */}
     </div>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Qwik Flower",
+  title: "MathOCR-应用",
 };

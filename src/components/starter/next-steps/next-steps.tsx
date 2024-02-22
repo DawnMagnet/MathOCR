@@ -39,15 +39,13 @@ export default component$(() => {
       if ((e as KeyboardEvent).key === "Alt") {
         gettingStartedStep.value = 1;
       }
-    }),
+    })
   );
 
   return (
     <div class="container container-purple container-center">
       <h2>
-        Time for a
-        <br />
-        <span class="highlight">qwik intro</span>?
+        <span class="highlight">小提示</span>
       </h2>
       <div class={styles.gettingstarted}>
         <div
@@ -65,7 +63,7 @@ export default component$(() => {
       </div>
       {gettingStartedStep.value + 1 < GETTING_STARTED_STEPS.length ? (
         <button class="button-dark" onClick$={() => gettingStartedStep.value++}>
-          Continue with Step {gettingStartedStep.value + 2} of{" "}
+          继续浏览 {gettingStartedStep.value + 2}-{""}
           {GETTING_STARTED_STEPS.length}
         </button>
       ) : (
@@ -73,7 +71,7 @@ export default component$(() => {
           class="button-dark"
           onClick$={() => (gettingStartedStep.value = 0)}
         >
-          Re-Start
+          重新开始
         </button>
       )}
     </div>
